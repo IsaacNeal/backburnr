@@ -4,4 +4,3 @@ if(function_exists('openssl_random_pseudo_bytes')){
 }else{
 	echo base64_encode(mcrypt_create_iv(128, MCRYPT_DEV_URANDOM));
 }
-echo "<br />".$_COOKIE['id'];
