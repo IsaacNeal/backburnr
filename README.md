@@ -1,4 +1,4 @@
-SETI "Social Engineering Training and Instruction"
+Backburnr Social Network Engineering Training Course and most raw in your face social network on the interweb.
 This project is made for beginners in the hopes
 of teaching some basic techniques for building social
 networking systems with open source technologies
