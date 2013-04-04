@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("scripts/connect.php"); 
 if(isset($_POST['email']) && trim($_POST['email']) != ""){
 	$email = strip_tags($_POST['email']);
@@ -23,11 +24,12 @@ if(isset($_POST['email']) && trim($_POST['email']) != ""){
 				setcookie("id", $uid, strtotime( '+30 days' ), "/", "", "", TRUE);
 				setcookie("username", $username, strtotime( '+30 days' ), "/", "", "", TRUE);
     			setcookie("password", $hash, strtotime( '+30 days' ), "/", "", "", TRUE); 
-				echo 'Valid password<br />'.$_SESSION['uid'].'<br />'.$_SESSION['username'].'<br />'.$_SESSION['password'].'
-				<br />'.$_COOKIE['id'];
+				/* echo 'Valid password<br />'.$_SESSION['uid'].'<br />'.$_SESSION['username'].'<br />'.$_SESSION['password'].'
+				<br />'.$_COOKIE['id']; */
+				header("location: index.php");
 				exit();
 			} else {
-				echo 'Invalid password<br />';
+				echo 'Invalid password Press back and try again<br />';
 				exit();
 			}
 		}

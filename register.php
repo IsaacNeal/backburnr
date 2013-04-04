@@ -106,7 +106,7 @@ $link
 		/// Send the email now ////
 		mail($email1, $subject, $message, $headers, '-f noreply@gotCode.org');
 		$db->commit();
-		echo "Thanks for joining! Check your email in a few moments to activate your account so that you may log in. See you on the site!"; 
+		echo "Thanks for joining! Check your email in a few moments to activate your account so that you may log in. See you on the site!";
 		exit();
 		$db = null;
 		exit();
