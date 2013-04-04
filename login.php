@@ -4,7 +4,7 @@ include_once("scripts/connect.php");
 if(isset($_POST['email']) && trim($_POST['email']) != ""){
 	$email = strip_tags($_POST['email']);
 	$password = $_POST['password'];
-	$hmac = hash_hmac('sha512', $password, file_get_contents('http://www.worldofwebcraft.com/random/key.txt'));
+	$hmac = hash_hmac('sha512', $password, file_get_contents('path/to/key.txt'));
 	$stmt1 = $db->prepare("SELECT id, username, password FROM members WHERE email=:email AND activated='1' LIMIT 1");
 	$stmt1->bindValue(':email',$email,PDO::PARAM_INT);
 	try{
