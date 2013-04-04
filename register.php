@@ -6,7 +6,6 @@ if(isset($_POST['username'])){
     $email2 = strip_tags($_POST['email2']);
     $pass1 = $_POST['pass1'];
     $pass2 = $_POST['pass2'];
-	$regex = '/^([a-zA-Z0-9])+([\.a-zA-Z0-9_-])*@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-]+)*\.([a-zA-Z]{2,6})$/';
     // make sure no fields are blank /////
     if(trim($username) == "" || trim($email1) == "" || trim($pass1) == "" || trim($pass2) == ""){
         echo "Error: All fields are required. Please press back in your browser and try again.";
@@ -23,7 +22,7 @@ if(isset($_POST['username'])){
         echo "Your password fields do not match. Press back and try again";
         exit();
     }
-	if(!preg_match($regex, $email)){
+	if(!filter_var($email1, FILTER_VALIDATE_EMAIL)){
 		echo "You have entered an invalid email. Press back and try again";
         exit();
 	}
@@ -89,12 +88,12 @@ if(isset($_POST['username'])){
 		$stmt3->bindValue(':token',$token,PDO::PARAM_STR);
 		$stmt3->execute();
 		//// Send email activation to the new user ////
-		$from = "From: Auto Resposder @ GotCode <admin@gotcode.org>";
-		$subject = "IMPORTANT: Activate your gotCode account";
-		$link = 'http://www.gotcode.org/activate.php?user='.$lastId.'&token='.$token.'';
+		$from = "From: Auto Resposder @ Backburnr <admin@backburnr.com>";
+		$subject = "IMPORTANT: Activate your Backburnr account";
+		$link = 'http://backburnr.com/activate.php?user='.$lastId.'&token='.$token.'';
 		//// Start Email Body ////
 		$message = "
-Thanks for registering an account at gotCode.org! Were glad you decided to join us in this wacky adventure.
+Thanks for registering an account at backburnr! Were glad you decided to join us in this wacky adventure.
 Theres just one last step to set up your account. Please click the link below to confirm your identity and get started.
 If the link below is not active please copy and paste it into your browser address bar. See you on the site!
 
@@ -124,7 +123,7 @@ $link
 <html>
 <head>
 <meta charset="utf-8">
-<title>Password Hashing</title>
+<title>Register Your Backburnr.com account</title>
 </head>
 
 <body>
