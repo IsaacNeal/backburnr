@@ -32,7 +32,7 @@ if(isset($_GET['user']) && $_GET['user'] != "" && isset($_GET['token']) && $_GET
 				$db->rollBack();
 			}
 		}else{
-			echo "Sorry, There has been an error. Maybe try registering again derp.<br />".$count."<br />".$user."<br />".$token;
+			echo "Sorry, There has been an error. Maybe try registering again derp.";
 		}
 	}
 	catch(PDOException $e){
