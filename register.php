@@ -27,7 +27,7 @@ if(isset($_POST['username'])){
         exit();
 	}
     //// create the hmac /////
-    $hmac = hash_hmac('sha512', $pass1, file_get_contents('http://www.worldofwebcraft.com/random/key.txt'));
+    $hmac = hash_hmac('sha512', $pass1, file_get_contents('path/to/key.txt'));
     //// create random bytes for salt ////
     $bytes = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
     //// Create salt and replace + with . ////
