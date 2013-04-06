@@ -1,0 +1,156 @@
+@charset "utf-8";
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #333;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+a img {
+	border: none;
+}
+a:link {
+	color:#414958;
+	text-decoration: underline;
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus {
+	text-decoration: none;
+}
+.container {
+	width: 80%;
+	max-width: 1260px;
+	min-width: 780px;
+	background-color: #FFF;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:48px;
+	margin-bottom:48px; 
+	border-radius:12px;
+	-moz-border-radius:12px;
+	box-shadow: 3px 3px 5px #999 inset;
+}
+.header {
+	background: #4c4c4c; /* Old browsers */
+	background: -moz-linear-gradient(top,  #4c4c4c 0%, #474747 28%, #1c1c1c 91%, #111111 100%, #131313 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(28%,#474747), color-stop(91%,#1c1c1c), color-stop(100%,#111111), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #4c4c4c 0%,#474747 28%,#1c1c1c 91%,#111111 100%,#131313 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #4c4c4c 0%,#474747 28%,#1c1c1c 91%,#111111 100%,#131313 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #4c4c4c 0%,#474747 28%,#1c1c1c 91%,#111111 100%,#131313 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #4c4c4c 0%,#474747 28%,#1c1c1c 91%,#111111 100%,#131313 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+}
+.sidebar1 {
+	margin-top:48px;
+	float: right;
+	width: 20%;
+	background:#484848 url(images/textureblock.png) repeat;
+	padding-bottom: 10px;
+	color:#CCC;
+	box-shadow: 1px 1px 12px #333;
+	border-bottom-left-radius:12px;
+}
+.content {
+	padding: 10px 0;
+	width: 80%;
+	float: right;
+	border-radius:12px;
+	-moz-border-radius:12px;
+}
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; 
+}
+ul.nav {
+	list-style: none;
+	border-top: 1px solid #666;
+	margin-bottom: 15px;
+}
+ul.nav li {
+	border-bottom: 1px solid #CCC;
+}
+ul.nav a, ul.nav a:visited {
+	padding: 5px 5px 5px 15px;
+	display: block; 
+	text-decoration: none;
+	background: #707070; /* Old browsers */
+	background: -moz-linear-gradient(top,  #707070 0%, #141c16 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#707070), color-stop(100%,#141c16)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #707070 0%,#141c16 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #707070 0%,#141c16 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #707070 0%,#141c16 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #707070 0%,#141c16 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#707070', endColorstr='#141c16',GradientType=0 ); /* IE6-9 */
+	color: #5BDB3C;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus {
+	background: #141c16; /* Old browsers */
+background: -moz-linear-gradient(top,  #141c16 0%, #707070 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#141c16), color-stop(100%,#707070)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #141c16 0%,#707070 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #141c16 0%,#707070 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #141c16 0%,#707070 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #141c16 0%,#707070 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#141c16', endColorstr='#707070',GradientType=0 ); /* IE6-9 */
+
+	color: #FFF;
+}
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+	position: relative;
+	clear: both;
+}
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {
+	float: right;
+	margin-left: 8px;
+}
+.fltlft {
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat {
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+/* ~~ The footer ~~ */
+div#footy {background:#484848 url(../images/textureblock.png) repeat; padding:10px 0px 0px 0px; font-size:14px; color:#CCC; border-top:#666 1px solid; width: 100%;max-width: 1600px;min-width: 780px;}
+div#footy > a {outline:none; text-decoration:none; color:#FFF;}
+div#footy > a:link {color:#FFF;}
+div#footy > a:hover {color:#CCC; text-decoration:underline;}
+
+div#footerWebServices{width:1000px; margin:12px auto 10px auto; height:44px; background:url(footerWebServices.png) no-repeat;}
+div.footaff{width:1000px; margin:0px auto; padding-left:6px;}
+div.footaff > div{float:left; width:125px; height:125px; border:#1E1E1E 1px solid; -moz-border-radius:3px; border-radius:3px; box-shadow: 0px 1px 1px #707070; margin:3px 4px 3px 3px; padding:4px; background:#333;}
+div.footaff > div:hover{border:#CCC 1px solid;}
+div.footaff > div > img{border:none;}
+div.footaff > div.footaffwide{float:left; width:468px; height:60px; border:#1E1E1E 1px solid; -moz-border-radius:3px; border-radius:3px; box-shadow: 0px 1px 1px #707070; margin:6px 3px 3px 3px; padding:4px; background:#333;}
+div.footaff > div.footaffwide:hover{border:#CCC 1px solid;}
+
+div#footymenubar{width:48%; margin:10px auto 16px auto; background:#2C2C2C; padding:12px 14px; border:#1E1E1E 1px solid; -moz-border-radius:3px; border-radius:3px; box-shadow: 0px 1px 1px #707070; color:#999;}
+div#footymenubar p a {outline:none; text-decoration:none; color:#5BDB3C;}
+div#footymenubar p a:link {color:#5BDB3C;}
+div#footymenubar p a:hover {color:#FFF; text-decoration:underline;}
+div#footnav{width:1000px; margin:0px auto;}
+div#footnav > div{float:left; width:160px; height:264px; background:#333; padding:8px 14px; border:#1E1E1E 1px solid; -moz-border-radius:3px; border-radius:3px; box-shadow: 0px 1px 1px #707070; line-height:2.0em; margin-right:12px;}
+div#footnav > div > span{display:block; font-size:16px; font-weight:bold; text-shadow: -1px -1px #000000; color:#999;}
+div#footnav > div > a{color:#06F; font-size:13px; text-shadow: -1px -1px #000000;}
+div#footnav > div > a:link {color:#06F;}
+div#footnav > div > a:hover {color:#FFF; text-decoration:underline;}
+div#footerTop {width:1000px; margin:0px auto; font-size:12px; margin-bottom:6px; text-shadow: 0px -1px #000000;}
+div#footerBtm{width:1000px; margin:12px auto 0px auto; height:111px; background:url(../images/footerBtm.png);}
+

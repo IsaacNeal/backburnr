@@ -1,0 +1,4 @@
+# Make all requests have the www. in them
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^backburnr\.com
+RewriteRule ^(.*)$ http://www.backburnr.com/$1 [R=permanent,L]
