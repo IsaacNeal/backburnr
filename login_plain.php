@@ -1,15 +1,12 @@
 <?php
-include_once("scripts/check_user.php"); 
-if($user_is_logged == true){
-	header("location: index.php");
-	exit();
-}
+session_start();
+include_once("scripts/connect.php"); 
 if(isset($_POST['email']) && trim($_POST['email']) != ""){
 	$email = strip_tags($_POST['email']);
 	$password = $_POST['password'];
 	$hmac = hash_hmac('sha512', $password, file_get_contents('http://www.worldofwebcraft.com/random/key.txt'));
 	$stmt1 = $db->prepare("SELECT id, username, password FROM members WHERE email=:email AND activated='1' LIMIT 1");
-	$stmt1->bindValue(':email',$email,PDO::PARAM_STR);
+	$stmt1->bindValue(':email',$email,PDO::PARAM_INT);
 	try{
 		$stmt1->execute();
 		$count = $stmt1->rowCount();
@@ -53,51 +50,19 @@ if(isset($_POST['email']) && trim($_POST['email']) != ""){
 <html>
 <head>
 <meta charset="utf-8">
-<title>Page Template</title>
-<link rel="stylesheet" href="style/style.css"/>
-<style type="text/css">
-.contentBottom{
-	width:68%;
-	margin-left:auto;
-	margin-right:auto;
-}
-</style>
-<!--[if lte IE 7]>
-<style>
-.content { margin-right: -1px; } 
-ul.nav a { zoom: 1; }
-</style>
-<![endif]-->
+<title>Log In</title>
 </head>
+
 <body>
-<?php include_once("header_template.php"); ?>
-<div class="container">
-  <?php include_once("sidebar_template.php") ?>
-  <div class="content">
-  <div class="contentBottom">
-	<h2 style="text-align:center;">Warning! This site contains vicious dialog.</h2>
-    <p>Users at backburnr.com say whatever they want with no regard for your feelings. We encourage you to do the same.
-    If you are a pansy, or you are known for being butt hurt easily, we strongly advise you to go log in to some other 
-    social network where you might be able to find a shoulder to cry on.</p>
-    <form action="" method="post" class="form">
-    <h3>Log In</h3>
-    <strong>Email</strong><br />
-	<input type="text" name="email">
-	<br />
+<strong>Email</strong>
+<br />
+<form action="" method="post">
+<input type="text" name="email">
+<br />
 <strong>Password</strong><br />
-	<input type="password" name="password">
-	<br />
-    <br />
-    <p class="submit">
-	<button type="submit">Log In</button>
-    </p>
-  </form>
-  <br />
-  <br />
-  </div>
-</div>
-    <div class="clearfloat"></div>
-  <!-- end .container --></div>
-<?php include_once("footer_template.php") ?>
+<input type="password" name="password">
+<br />
+<input type="submit" value="Log In">
+</form>
 </body>
 </html>

@@ -1,10 +1,5 @@
 <?php
-//include_once("scripts/connect.php");
-include_once("scripts/check_user.php");
-if($user_is_logged == true){
-	header("location: index.php");
-	exit();
-}
+include_once("scripts/connect.php");
 if(isset($_POST['username'])){
     $username = preg_replace('#[^a-z0-9]#i', '', $_POST['username']);
     $email1 = strip_tags($_POST['email1']);
@@ -20,18 +15,15 @@ if(isset($_POST['username'])){
     /// Make sure both email fields match /////
     if($email1 != $email2){
         echo "Your email fields do not match. Press back and try again";
-		$db = null;
         exit();
     }
     //// Make sure both password fields match ////
     else if($pass1 != $pass2){
         echo "Your password fields do not match. Press back and try again";
-		$db = null;
         exit();
     }
 	if(!filter_var($email1, FILTER_VALIDATE_EMAIL)){
 		echo "You have entered an invalid email. Press back and try again";
-		$db = null;
         exit();
 	}
     //// create the hmac /////
@@ -59,7 +51,7 @@ if(isset($_POST['username'])){
 	}
 	//// query to check if the username is in the db already ////
 	$unameSQL = $db->prepare("SELECT username FROM members WHERE username=:username LIMIT 1");
-	$unameSQL->bindValue(':username',$username,PDO::PARAM_STR);
+	$unameSQL->bindValue('username',$username,PDO::PARAM_STR);
 	try{
 		$unameSQL->execute();
 		$unCount = $unameSQL->rowCount();
@@ -112,9 +104,10 @@ $link
 		$headers .= "Content-type: textrn";
 		$headers .= "From: $fromrn";
 		/// Send the email now ////
-		mail($email1, $subject, $message, $headers, '-f noreply@backburnr.com');
+		mail($email1, $subject, $message, $headers, '-f noreply@gotCode.org');
 		$db->commit();
 		echo "Thanks for joining! Check your email in a few moments to activate your account so that you may log in. See you on the site!";
+		exit();
 		$db = null;
 		exit();
 	}
@@ -130,35 +123,12 @@ $link
 <html>
 <head>
 <meta charset="utf-8">
-<title>Register Your Backburnr Account</title>
-<link rel="stylesheet" href="style/style.css"/>
-<style type="text/css">
-.contentBottom{
-	width:68%;
-	margin-left:auto;
-	margin-right:auto;
-}
-</style>
-<!--[if lte IE 7]>
-<style>
-.content { margin-right: -1px; } 
-ul.nav a { zoom: 1; }
-</style>
-<![endif]-->
+<title>Register Your Backburnr.com account</title>
 </head>
+
 <body>
-<?php include_once("header_template.php"); ?>
-<div class="container">
-  <?php include_once("sidebar_template.php") ?>
-  <div class="content">
-  <div class="contentBottom">
-	<h2 style="text-align:center;">Warning! This site contains vicious dialog and verbal attacs.</h2>
-    <p>Users at backburnr.com say whatever they want with no regard for your feelings. We encourage you to do the same.
-    If you are a pansy, or you are known for being butt hurt easily, we strongly advise you to go create an account at some other 
-    social network where you might be able to find a shoulder to cry on.</p>
-    <form action="" method="post" class="form">
-    <h3 style="text-align:center">Sign Up</h3>
-<label for="username"><strong>Username</strong>
+<form action="" method="post">
+<label for="username"><strong>Create a username</strong>
 <br />
 <input type="text" name="username">
 </label>
@@ -183,17 +153,7 @@ ul.nav a { zoom: 1; }
 <input type="password" name="pass2">
 </label>
 <br />
-<br />
-<p class="submit">
-<button type="submit">Sign Up</button>
-</p>
+<input type="submit" value="Register">
 </form>
-  <br />
-  <br />
-  </div>
-</div>
-    <div class="clearfloat"></div>
-  <!-- end .container --></div>
-<?php include_once("footer_template.php") ?>
 </body>
 </html>
