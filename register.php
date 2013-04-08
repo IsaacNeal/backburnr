@@ -55,7 +55,7 @@ if(isset($_POST['username'])){
 	}
 	//// query to check if the username is in the db already ////
 	$unameSQL = $db->prepare("SELECT username FROM members WHERE username=:username LIMIT 1");
-	$unameSQL->bindValue('username',$username,PDO::PARAM_STR);
+	$unameSQL->bindValue(':username',$username,PDO::PARAM_STR);
 	try{
 		$unameSQL->execute();
 		$unCount = $unameSQL->rowCount();
