@@ -92,7 +92,7 @@ if(isset($_POST['username'])){
 		$stmt3->bindValue(':token',$token,PDO::PARAM_STR);
 		$stmt3->execute();
 		//// Send email activation to the new user ////
-		$from = "From: Auto Resposder @ Backburnr <admin@backburnr.com>";
+		$from = "From: Auto Resposder @ Backburnr <admin@your-email.com>";
 		$subject = "IMPORTANT: Activate your Backburnr account";
 		$link = 'http://backburnr.com/activate.php?user='.$lastId.'&token='.$token.'';
 		//// Start Email Body ////
@@ -108,7 +108,7 @@ $link
 		$headers .= "Content-type: textrn";
 		$headers .= "From: $fromrn";
 		/// Send the email now ////
-		mail($email1, $subject, $message, $headers, '-f noreply@gotCode.org');
+		mail($email1, $subject, $message, $headers, '-f noreply@your-email.com');
 		$db->commit();
 		echo "Thanks for joining! Check your email in a few moments to activate your account so that you may log in. See you on the site!";
 		exit();
