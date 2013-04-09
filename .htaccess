@@ -2,3 +2,11 @@
 RewriteEngine on
 RewriteCond %{HTTP_HOST} ^backburnr\.com
 RewriteRule ^(.*)$ http://www.backburnr.com/$1 [R=permanent,L]
+#prevent viewing of key.txt
+<files key.txt>
+ order allow,deny
+ deny from all
+</files>
+# serve custom error pages
+ErrorDocument 404 /error/404.php
+ErrorDocument 403 /error/403.php

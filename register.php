@@ -35,7 +35,7 @@ if(isset($_POST['username'])){
         exit();
 	}
     //// create the hmac /////
-    $hmac = hash_hmac('sha512', $pass1, file_get_contents('http://www.worldofwebcraft.com/random/key.txt'));
+    $hmac = hash_hmac('sha512', $pass1, file_get_contents('secret/key.txt'));
     //// create random bytes for salt ////
     $bytes = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
     //// Create salt and replace + with . ////
@@ -96,7 +96,7 @@ if(isset($_POST['username'])){
 		$stmt3->bindValue(':token',$token,PDO::PARAM_STR);
 		$stmt3->execute();
 		//// Send email activation to the new user ////
-		$from = "From: Auto Resposder @ Backburnr <admin@backburnr.com>";
+		$from = "From: Auto Resposder @ Backburnr <admin@your-email.com>";
 		$subject = "IMPORTANT: Activate your Backburnr account";
 		$link = 'http://backburnr.com/activate.php?user='.$lastId.'&token='.$token.'';
 		//// Start Email Body ////
@@ -113,6 +113,7 @@ $link
 		$headers .= "From: $fromrn";
 		/// Send the email now ////
 		mail($email1, $subject, $message, $headers, '-f noreply@backburnr.com');
+		mail($email1, $subject, $message, $headers, '-f noreply@your-email.com');
 		$db->commit();
 		echo "Thanks for joining! Check your email in a few moments to activate your account so that you may log in. See you on the site!";
 		$db = null;
