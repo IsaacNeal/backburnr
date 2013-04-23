@@ -103,7 +103,7 @@ ul.nav a { zoom: 1; }
   <!---------------------->
   <div style="width:100%;">
     <div style="float:left; width:20%; height:200px;"></div>
-    <div style="float:left; width:58%;"><img src="../images/403.png" alt="nopass" style="width:100%;"/></div>
+    <div style="float:left; width:58%; padding-left:24px;"><img src="../images/403.png" alt="nopass" style="width:90%; height:448px;"/></div>
     </div>
     <div class="clearfloat"></div>
     <!-- end .content --></div>

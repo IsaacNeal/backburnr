@@ -3,7 +3,7 @@ $logLink = "";
 $signUp_link = "";
 $profile_link = "";
 if($user_is_logged == true){
-	$profile_link = '<li><a href="#">'.$log_uname.'</a></li>';
+	$profile_link = "<li><a href=\"profile.php?user=$log_uname\">$log_uname</a></li>";
 	$logLink = '<li><a href="logout.php">Log Out</a></li>';
 }else{
 	$logLink = '<li><a href="login.php">Log In</a></li>';

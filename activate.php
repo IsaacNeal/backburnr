@@ -13,10 +13,10 @@ if(isset($_GET['user']) && $_GET['user'] != "" && isset($_GET['token']) && $_GET
 			try{
 				$db->beginTransaction();
 				$updateSQL = $db->prepare("UPDATE members SET activated='1' WHERE id=:user LIMIT 1");
-				$updateSQL->bindValue(':user',$user,PDO::PARAM_STR);
+				$updateSQL->bindValue(':user',$user,PDO::PARAM_INT);
 				$updateSQL->execute();
 				$deleteSQL = $db->prepare("DELETE FROM activate WHERE user=:user AND token=:token LIMIT 1");
-				$deleteSQL->bindValue(':user',$user,PDO::PARAM_STR);
+				$deleteSQL->bindValue(':user',$user,PDO::PARAM_INT);
 				$deleteSQL->bindValue(':token',$token,PDO::PARAM_STR);
 				$deleteSQL->execute();
 				if(!file_exists("members/$user")){
@@ -30,9 +30,12 @@ if(isset($_GET['user']) && $_GET['user'] != "" && isset($_GET['token']) && $_GET
 			}
 			catch(PDOException $e){
 				$db->rollBack();
+				echo $e->getMessage();
 			}
 		}else{
 			echo "Sorry, There has been an error. Maybe try registering again derp.";
+			$db = null;
+			exit();
 		}
 	}
 	catch(PDOException $e){
@@ -42,13 +45,3 @@ if(isset($_GET['user']) && $_GET['user'] != "" && isset($_GET['token']) && $_GET
 	}
 }
 ?>
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Activation</title>
-</head>
-
-<body>
-</body>
-</html>

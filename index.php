@@ -102,7 +102,7 @@ ul.nav a { zoom: 1; }
   <!---------------------->
   <div style="width:100%;">
     <div style="float:left; width:28%;padding-left:12px;"><img src="images/code.png" alt="p1" style="width:100%;"></div>
-    <div class="topsection"><p>All code for the training course is available on <a href="https://github.com/IsaacNeal/backburbr" target="_blank">github</a> and is updated frequently. Don't forget to check out <a href="http://www.worldofwebcraft.com" target="_blank">World Of Webcraft</a> for code help and advice, and to learn how to become a contributor to the project. Check back often for new updates!</p></div>
+    <div class="topsection"><p>All code for the training course is available on <a href="https://github.com/IsaacNeal/backburnr" target="_blank">github</a> and is updated frequently. Don't forget to check out <a href="http://www.worldofwebcraft.com" target="_blank">World Of Webcraft</a> for code help and advice, and to learn how to become a contributor to the project. Check back often for new updates!</p></div>
     </div>
     <div style="width:100%; clear:both; padding-top:36px;">
     <div style="float:left; width:28%;padding-left:12px;"><img src="images/video.png" alt="p1" style="width:100%;"></div>

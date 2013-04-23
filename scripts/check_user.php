@@ -9,7 +9,6 @@ if(isset($_SESSION['uid']) && isset($_SESSION['username']) && isset($_SESSION['p
 	$log_user_id = preg_replace('#[^0-9]#', '', $_SESSION['uid']);
 	$log_uname = preg_replace('#[^a-z0-9]#i', '', $_SESSION['username']);
 	$log_pass = preg_replace('#[^a-z0-9]#i', '', $_SESSION['password']);
-	//$user_is_logged = checkUser($db, $log_user_id,$log_uname,$log_pass);
 	$stmt = $db->prepare("SELECT id FROM members WHERE id=:log_user_id LIMIT 1");
 	$stmt->bindValue(':log_user_id',$log_user_id,PDO::PARAM_INT);
 	try{
@@ -29,7 +28,6 @@ if(isset($_SESSION['uid']) && isset($_SESSION['username']) && isset($_SESSION['p
 	$log_user_id = $_SESSION['id'];
 	$log_uname = $_SESSION['username'];
 	$log_pass = $_SESSION['password'];
-	//$user_is_logged = checkUser($db,$log_user_id,$log_uname,$log_pass);
 	$stmt = $db->prepare("SELECT id FROM members WHERE id=:log_user_id LIMIT 1");
 	$stmt->bindValue(':log_user_id',$log_user_id,PDO::PARAM_INT);
 	try{

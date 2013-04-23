@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>One function to ajax them all</title>
+<script type="text/javascript" src="js/serialize.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script>
+window.onload = function(){ 
+ajax('myForm2', 
+	 'GET', 
+	 'parser.php', 
+	 'status2'
+)};
+</script>
+</head>
+<body>
+	<div style="width:400px; margin:48px auto;">
+		<form id="myForm1" action="" onsubmit="return false">
+			<strong>Name</strong><br />
+				<input id="name" name="name" type="text"><br />
+					<strong>Address</strong><br />
+				<input id="address" name="address" type="text"><br />
+			<strong>Number</strong><br />
+		<input id="number" name="number" type="text"><br />
+	<strong>Email</strong><br />
+<input id="email" name="email" type="text"><br />
+	<strong>What do you do?</strong>
+		<br />
+			<select name="select" id="select">
+				<option value="rock" selected="selected">I rock</option>
+   					 <option value="rule">I rule</option>
+    			<option value="suck">I suck</option>
+  			</select>
+		<br />
+  <strong>Which do you prefer?</strong>
+<br />
+  	<label for="rad1"><input type="radio" id="rad1" name="rads1" value="Apples">Apples</label>
+  		<br />
+  			<label for="rad2"><input type="radio" id="rad2" name="rads1" value="Peaches">Peaches</label>
+    			<br />
+  					<label for="rad3"><input type="radio" id="rad3" name="rads1" value="Bacon">Bacon</label>
+   				<br />
+			<strong>Which movies are cool?</strong>
+		<br />
+  	<label for="cb1"><input type="checkbox" id="cb1" name="cb1" value="fast_times">Fast Times At Ridgemont High</label>
+<br />
+  	<label for="cb2"><input type="checkbox" id="cb2" name="cb2" value="lotr">LOTR</label>
+   		<br />
+  			<label for="cb3"><input type="checkbox" id="cb3" name="cb3" value="ep1">Star Wars Episode 1</label>
+   				<br />
+  					<label for="cb4"><input type="checkbox" id="cb4" name="cb4" value="predetor">Predetor</label>
+   				<br />
+  			<label for="cb5"><input type="checkbox" id="cb5" name="cb5" value="hobbit">The Hobbit</label>
+   		<br />
+  	<input type="checkbox" name="all" id="all" value="all" onchange="checkAll()"> I like all of them!
+<br />
+<strong>Leave A Message</strong>
+	<textarea id="textarea" name="textarea" style="width:400px; height:200px;"></textarea>
+       <br />
+          <button id="form1Btn">Post Form</button>
+              </form>
+                  <div id="status"></div>
+                      <br /><br />
+                         <div id="myForm2">
+                             <input type="hidden" id="welcome" value="Hello World?">
+                         <input type="hidden" id="my_framework" value="Kicks Ass">
+                     </div>
+<script>
+document.getElementById('form1Btn').onclick = function(){
+ajax('myForm1',
+	 'POST', 
+	 'parser.php', 
+	 'status'
+)};
+</script>
+                 <div id="status2"></div>
+             </div>
+       </body>
+</html>
