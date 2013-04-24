@@ -13,6 +13,8 @@ function ArrayBinder(&$pdoStatement, &$array){
 	$msg = "";
 	$app_id = "602371646439600";
 	$app_secret = "a0ddca2b422dd1b58277740ce0ccafda";
+	$app_id = "Your App Id";
+	$app_secret = "Your App Secret";
 	$my_url = "http://www.backburnr.com/fb_register.php";
 	///////////////////////////////////////////////
 	$code = $_REQUEST["code"];
@@ -146,11 +148,11 @@ ul.nav a { zoom: 1; }
 <?php include_once("footer_template.php") ?>
 <script>
 document.getElementById('signUpBtn').onmousedown = function(){
-ajax('signup_form',
-	 'POST', 
-	 'ext_signup.php', 
-	 'form'
-)};
+	ajax('signup_form',
+		 'POST', 
+		 'ext_signup.php', 
+		 'form'
+	)};
 </script>
 </body>
 </html>

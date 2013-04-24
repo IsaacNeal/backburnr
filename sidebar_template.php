@@ -1,28 +1,14 @@
-<?php 
-$logLink = "";
-$signUp_link = "";
-$profile_link = "";
-if($user_is_logged == true){
-	$profile_link = "<li><a href=\"profile.php?user=$log_uname\">$log_uname</a></li>";
-	$logLink = '<li><a href="logout.php">Log Out</a></li>';
-}else{
-	$logLink = '<li><a href="login.php">Log In</a></li>';
-	$signUp_link = '<li><a href="register.php">Sign Up</a></li>';
-}
-?>
 <script src="js/poll.js" type="text/javascript"></script>
 <script type="text/javascript">
 window.onload = function(){list_nums();}
 </script>
 <div class="sidebar1">
    <ul class="nav">
-   	  <?php echo $profile_link; ?>
-      <?php echo $logLink; ?>
-      <?php echo $signUp_link; ?>
-      <li><a href="#">Video Lessons</a></li>
-      <li><a href="#">Source Code</a></li>
-      <li><a href="#">Contributors</a></li>
-      <li><a href="#">FAQ'S</a></li>
+      <li><a href="http://www.youtube.com/playlist?list=PL0BBakFmJ-JneCF-aDQyO-Id-ltCSqJT1" target="_blank">Video Lessons</a></li>
+      <li><a href="http://www.youtube.com/user/iPriceProductions" target="_blank">Subscribe</a></li>
+      <li><a href="https://github.com/IsaacNeal/backburnr" target="_blank">Source Code</a></li>
+      <li><a href="http://www.worldofwebcraft.com" target="_blank">Forums</a></li>
+      <li><a href="#">WTF?</a></li>
     </ul>
     <div style="padding:6px; text-align:center;"><strong>Which group Pisses You Off More?</strong></div>
     <div style="padding:6px;">

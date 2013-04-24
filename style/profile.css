@@ -55,6 +55,25 @@ a:hover, a:active, a:focus {
 	background: linear-gradient(to bottom,  #4c4c4c 0%,#474747 28%,#1c1c1c 91%,#111111 100%,#131313 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
 }
+#user_top img{
+	width:38px;
+	height:38px;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	border:#999 1px solid;
+}
+#user_top a:link {
+	color:#5BDB3C;
+	text-decoration: none;
+}
+#user_top a:visited {
+	color: #5BDB3C;
+	text-decoration: none;
+}
+#user_top a:hover, a:active, a:focus {
+	color:#F8F8F8;
+	text-decoration: none;
+}
 .sidebar1 {
 	float: left;
 	width: 20%;

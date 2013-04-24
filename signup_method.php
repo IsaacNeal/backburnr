@@ -1,5 +1,9 @@
 <?php 
 include_once("scripts/check_user.php");
+if($user_is_logged == true){
+	header("location: index.php");
+	exit();
+}
 ?>
 <!doctype html>
 <html>
@@ -8,6 +12,11 @@ include_once("scripts/check_user.php");
 <title>Backburnr Social Network Engineering Training Course</title>
 <link rel="stylesheet" href="style/style.css"/>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
+<script type="text/javascript">
+function relocate(url){
+	window.location = url;
+}
+</script>
 <style type="text/css">
 .banner{
 	margin: 0px auto;
@@ -98,16 +107,13 @@ ul.nav a { zoom: 1; }
   <?php include_once("sidebar_template.php") ?>
   <div class="content">
   <div class="banner">
-  <h2 style="text-align:center; color:#333;">Social Netork Engineering Training Course and Most Raw In Your Face Social Experience On The Interweb</h2>
+  <h2 style="text-align:center; color:#333;">Please select your registration method below</h2>
   </div>
   <!---------------------->
-  <div style="width:100%;">
-    <div style="float:left; width:28%;padding-left:12px;"><img src="images/code.png" alt="p1" style="width:100%;"></div>
-    <div class="topsection"><p>All code for the training course is available on <a href="https://github.com/IsaacNeal/backburnr" target="_blank">github</a> and is updated frequently. Don't forget to check out <a href="http://www.worldofwebcraft.com" target="_blank">World Of Webcraft</a> for code help and advice, and to learn how to become a contributor to the project. Check back often for new updates!</p></div>
-    </div>
-    <div style="width:100%; clear:both; padding-top:36px;">
-    <div style="float:left; width:28%;padding-left:12px;"><img src="images/video.png" alt="p1" style="width:100%;"></div>
-    <div class="topsection"><p>Catch in depth video tutorials and learn to program your own custom social community website from scratch. Video lessons will cover a wide range of programming techniques and logic. The system will be built using open source technologies like PHP, MySQL, JavaScript, HTML, and CSS. Don't forget to <a href="http://www.youtube.com/user/iPriceProductions">subscribe</a> to get alerts when new videos are released!</p></div>
+  <div style="width:100%; text-align:center;">
+  <p class="submit"><button id="here" onclick="relocate('register.php')">Register using Backburnr</button></p>
+    <p class="submit"><button id="fb" onclick="relocate('fb_register.php')">Register using Facebook</button></p>
+    <p class="submit"><button id="gp" onclick="relocate('gplus_register.php')">Register using Google+</button></p>
     </div>
     <!---------------------->
     <!--<div class="topContent">
@@ -141,9 +147,9 @@ ul.nav a { zoom: 1; }
     <!-- -->
     <div class="clearfloat"></div>
     <div class="content-bottom">
-      <h2 style="color:#285C01; text-align:center;">Section 1 In Progress: Registration and Log In</h2>
+      <h2 style="color:#F00; text-align:center;">Prepare Yourself</h2>
     	<p>
-        	The backburnr social engineering training course will be released in sections. Each section will contain multiple video lessons, each specific to the section. This system is intended to be educational, and is offered <b>as is</b> with no warranty in the hopes that it will be useful. Check back for updates often as code will be updated daily. 
+        	This system may be being used as a training course at the moment, but after the course is finished this site will continue on functioning as intended by it's creator. You may experience very raw and vicious dialog within this site. If you are looking for the usual social networking website that most people are used to, you have come to the wrong place. Welcome to the most brutal corner of the internet. 
         </p>
     </div>
     <!-- end .content --></div>

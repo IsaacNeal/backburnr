@@ -42,6 +42,25 @@ a:hover, a:active, a:focus {
 	-moz-border-radius:12px;
 	box-shadow: 3px 3px 5px #999 inset;
 }
+#user_top img{
+	width:38px;
+	height:38px;
+	border-radius:8px;
+	-moz-border-radius:8px;
+	border:#999 1px solid;
+}
+#user_top a:link {
+	color:#5BDB3C;
+	text-decoration: none;
+}
+#user_top a:visited {
+	color: #5BDB3C;
+	text-decoration: none;
+}
+#user_top a:hover, a:active, a:focus {
+	color:#F8F8F8;
+	text-decoration: none;
+}
 .header {
 	background: #4c4c4c; /* Old browsers */
 	background: -moz-linear-gradient(top,  #4c4c4c 0%, #474747 28%, #1c1c1c 91%, #111111 100%, #131313 100%); /* FF3.6+ */

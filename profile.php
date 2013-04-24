@@ -106,16 +106,6 @@ function navmenus(x, ma){
 }
 </script>
 <script>
-function showToggle(e){
-	var target = document.getElementById(e);
-	if(target.style.display == 'none'){
-		target.style.display = 'block';
-	}else{
-		target.style.display = 'none';
-	}
-}
-</script>
-<script>
 function show_lightbox(){
 	document.getElementById('light').style.display = 'block';
 	document.getElementById('fade').style.display = 'block';
@@ -430,17 +420,19 @@ ul.nav a { zoom: 1; }
   <p class="submit" style="float:left;"><button type="button" onclick="uploads_init('banner_upload')">Edit Banner</button></p>
   <div class="page-uploads" id="avatar_upload" style="display:none; clear:both;">
 <form action="profWrite.php" method="post" enctype="multipart/form-data" name="myform">
-	<strong>Upload a photo</strong>
+	<strong>Upload an avatar</strong>
   <input style="none;" name="avatar" type="file">
     <br class="clearfloat" />
+    Our system will automatically re size your image, but for best results your image should be between 180 to 200 pixels wide and 180 to 200 pixels in height.
   <p class="submit"><button type="submit">Upload</button></p>
 </form>
   </div>
   <div class="page-uploads" id="banner_upload" style="display:none; clear:both;">
 <form action="profWrite.php" method="post" enctype="multipart/form-data" name="myform">
-	<strong>Upload a photo</strong>
+	<strong>Upload a Banner</strong>
   <input style="none;" name="banner" type="file">
     <br />
+    Our system will automatically re size your image, but for best results your image should be between 400 to 600 pixels wide and 180 to 272 pixels in height.
   <p class="submit"><button type="submit">Upload</button></p>
 </form>
   </div>

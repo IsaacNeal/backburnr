@@ -157,8 +157,8 @@ ul.nav a { zoom: 1; }
     <p>Users at backburnr.com say whatever they want with no regard for your feelings. We encourage you to do the same.
     If you are a pansy, or you are known for being butt hurt easily, we strongly advise you to go create an account at some other 
     social network where you might be able to find a shoulder to cry on.</p>
-    <p>If however, you are wacky enough to create an account here, and your feeling a bit lazy, you can also use your Facebook account to register for the site. We will gather some of your basic data like name and email address from Facebook so you don't have to fill out the form below. Your Facebook account will also be linked to your profile and you can display a link to your Facebook profile from your profile here.</p><p style="text-align:center"><strong><a href="fb_register.php">Click here to use your Facebook account for registration</a></strong>
-    <br /> <strong>Or...</strong> </p>
+    <p>If however, you are wacky enough to create an account here, please fill in all the fields below and click the Sign Up button</strong>
+    </p>
     <form action="" method="post" class="form">
     <h3 style="text-align:center">Sign Up here</h3>
 <label for="username"><strong>Username</strong>
