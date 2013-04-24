@@ -11,11 +11,17 @@ function ArrayBinder(&$pdoStatement, &$array){
 	}
 }
 	$msg = "";
+<<<<<<< HEAD
 	$app_id = "602371646439600";
 	$app_secret = "a0ddca2b422dd1b58277740ce0ccafda";
 	$app_id = "Your App Id";
 	$app_secret = "Your App Secret";
 	$my_url = "http://www.backburnr.com/fb_register.php";
+=======
+	$app_id = "Your app id";
+	$app_secret = "your app secret";
+	$my_url = "http://www.yourdomain.com/fb_register.php";
+>>>>>>> d7b5d743b014f1907be088907051fd23c0c121c4
 	///////////////////////////////////////////////
 	$code = $_REQUEST["code"];
 

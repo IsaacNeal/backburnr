@@ -121,8 +121,8 @@ ul.nav a { zoom: 1; }
   <!-- end .container --></div>
 <?php include_once("footer_template.php") ?>
 <script type="text/javascript">
-      var clientId = '707492613930.apps.googleusercontent.com';
-      var apiKey = 'AIzaSyB9wpkWaLmOyvPiL7e3gQc3SgN63eG5K_s';
+      var clientId = 'Your client id';
+      var apiKey = 'Your API key';
       var scopes = 'https://www.googleapis.com/auth/plus.me https://www.googleapis.com/auth/userinfo.email';
 
       function handleClientLoad() {
