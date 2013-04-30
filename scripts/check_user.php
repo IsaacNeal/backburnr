@@ -24,7 +24,7 @@ if(isset($_SESSION['uid']) && isset($_SESSION['username']) && isset($_SESSION['p
 	$_SESSION['uid'] = preg_replace('#[^0-9]#', '', $_COOKIE['id']);
 	$_SESSION['username'] = preg_replace('#[^a-z0-9]#i', '', $_COOKIE['username']);
 	$_SESSION['password'] = preg_replace('#[^a-z0-9]#i', '', $_COOKIE['password']);
-	$log_user_id = $_SESSION['id'];
+	$log_user_id = $_SESSION['uid'];
 	$log_uname = $_SESSION['username'];
 	$log_pass = $_SESSION['password'];
 	$stmt = $db->prepare("SELECT id FROM members WHERE id=:log_user_id LIMIT 1");
