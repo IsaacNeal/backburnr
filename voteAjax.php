@@ -1,4 +1,11 @@
 <?php 
+/*
+* @author Isaac Price
+* This script is not part of the Backburnr lesson series but it is in the site and the script is available for you here
+* This script is part of an application which requires a few files, all can be found in the source code here on github 
+* for the backburnr project.
+* The other files are: js/poll.js and getNums.php
+*/
 function PDOBindArray(&$poStatement, &$paArray){
  	foreach ($paArray as $k=>$v){
 	$poStatement->bindValue(':'.$k,$v);
